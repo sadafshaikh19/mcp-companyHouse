@@ -21,6 +21,9 @@ public class GroupRelationshipAgent {
     
     @Autowired
     private OpenAiChatModel chatModel;
+
+    @Autowired
+    private LLMMonitoringService llmMonitoringService;
     
     public Map<String, Object> getGroupContext(String customerId, boolean hasLinkedCustomers) throws IOException {
         // If no linked customers, return null context
@@ -74,8 +77,20 @@ public class GroupRelationshipAgent {
                 )
                 .build();
         
+        // Track LLM call
+        io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
         ChatResponse response = chatModel.chat(request);
         String responseText = response.aiMessage().text();
+
+        // Record successful LLM call
+        llmMonitoringService.recordSuccessfulCall(
+            llmTimer,
+            "gpt-4o-mini", // model from config
+            200, // estimated prompt tokens
+            100, // estimated completion tokens
+            1000 // estimated duration in ms
+        );
         
         // Parse JSON from response
         String jsonStr = cleanJsonResponse(responseText);

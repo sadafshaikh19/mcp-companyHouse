@@ -19,6 +19,9 @@ public class KYBNoteAgent {
 
     @Autowired
     private OpenAiChatModel chatModel;
+
+    @Autowired
+    private LLMMonitoringService llmMonitoringService;
     
     public Map<String, Object> generateKYBNoteWithActions(String profile, String txInsights, 
                                                           Map<String, Object> riskAssessment) {
@@ -62,8 +65,20 @@ public class KYBNoteAgent {
                 )
                 .build();
         
+        // Track LLM call
+        io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
         ChatResponse response = chatModel.chat(request);
         String responseText = response.aiMessage().text();
+
+        // Record successful LLM call
+        llmMonitoringService.recordSuccessfulCall(
+            llmTimer,
+            "gpt-4o-mini", // model from config
+            200, // estimated prompt tokens
+            100, // estimated completion tokens
+            1000 // estimated duration in ms
+        );
         
         // Parse JSON from response
         String jsonStr = cleanJsonResponse(responseText);

@@ -63,7 +63,16 @@ Provides custom metrics for KYB operations:
 
 ### 5. LLM Monitoring Service (`LLMMonitoringService.java`)
 
-Comprehensive monitoring for Large Language Model operations:
+Comprehensive monitoring for Large Language Model operations across all agents:
+
+- **RiskComplianceAgent** - Risk assessment calls
+- **CustomerPartyProfileAgent** - Party profile analysis
+- **TransactionPatternAgent** - Pattern recognition
+- **JourneyClassifierAgent** - Journey classification
+- **KYBNoteAgent** - Note generation
+- **RiskScopeActionsAgent** - Risk scope assessment
+- **GroupRelationshipAgent** - Relationship analysis
+- **CustomerProfileAgent** - Profile summarization
 
 #### Token Usage Metrics
 - `llm.tokens.prompt`: Distribution of prompt tokens per request

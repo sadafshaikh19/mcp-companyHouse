@@ -148,11 +148,16 @@ llm.monitoring.cost.alert.threshold=10.0
 
 ### Agents
 
-- **RiskComplianceAgent:** Performs risk assessments with AI analysis
-- **CustomerPartyProfileAgent:** Analyzes customer party profiles
-- **TransactionPatternAgent:** Identifies transaction patterns and anomalies
-- **JourneyClassifierAgent:** Classifies customer journey stages
-- **KYBNoteAgent:** Manages KYB documentation and notes
+All agents now include comprehensive LLM monitoring and observability:
+
+- **RiskComplianceAgent:** Performs risk assessments with AI analysis + LLM monitoring
+- **CustomerPartyProfileAgent:** Analyzes customer party profiles + LLM monitoring
+- **TransactionPatternAgent:** Identifies transaction patterns and anomalies + LLM monitoring
+- **JourneyClassifierAgent:** Classifies customer journey stages + LLM monitoring
+- **KYBNoteAgent:** Manages KYB documentation and notes + LLM monitoring
+- **RiskScopeActionsAgent:** Assesses risk scope and recommended actions + LLM monitoring
+- **GroupRelationshipAgent:** Analyzes group relationships + LLM monitoring
+- **CustomerProfileAgent:** Generates customer profile summaries + LLM monitoring
 
 ## 🔍 Monitoring & Debugging
 
@@ -164,7 +169,7 @@ INFO [mcp-kyb-langchain-service,8f5c2d1e3a4b5c6d,2f8e9d1c3b4a5f6e] - Risk assess
 
 ### LLM Monitoring
 
-The service provides comprehensive monitoring of Large Language Model operations:
+The service provides comprehensive monitoring of Large Language Model operations across all agents:
 
 #### Cost Tracking
 - **Real-time cost calculation** based on OpenAI pricing

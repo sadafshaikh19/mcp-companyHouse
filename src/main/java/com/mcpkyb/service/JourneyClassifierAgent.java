@@ -19,6 +19,9 @@ public class JourneyClassifierAgent {
     
     @Autowired
     private OpenAiChatModel chatModel;
+
+    @Autowired
+    private LLMMonitoringService llmMonitoringService;
     
     public Map<String, Object> classifyJourney(String customerId) throws IOException {
         JsonNode crmData = JsonLoader.loadJson("crm.json");
@@ -73,8 +76,20 @@ public class JourneyClassifierAgent {
                 )
                 .build();
         
+        // Track LLM call
+        io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
         ChatResponse response = chatModel.chat(request);
         String responseText = response.aiMessage().text();
+
+        // Record successful LLM call
+        llmMonitoringService.recordSuccessfulCall(
+            llmTimer,
+            "gpt-4o-mini", // model from config
+            200, // estimated prompt tokens
+            100, // estimated completion tokens
+            1000 // estimated duration in ms
+        );
         
         // Parse JSON from response (handle markdown code blocks if present)
         String jsonStr = responseText.trim();

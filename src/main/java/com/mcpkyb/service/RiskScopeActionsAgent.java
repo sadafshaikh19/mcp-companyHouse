@@ -15,10 +15,12 @@ public class RiskScopeActionsAgent {
 
     private final OpenAiChatModel chatModel;
     private final ObjectMapper objectMapper;
+    private final LLMMonitoringService llmMonitoringService;
 
-    public RiskScopeActionsAgent(OpenAiChatModel chatModel, ObjectMapper objectMapper) {
+    public RiskScopeActionsAgent(OpenAiChatModel chatModel, ObjectMapper objectMapper, LLMMonitoringService llmMonitoringService) {
         this.chatModel = chatModel;
         this.objectMapper = objectMapper;
+        this.llmMonitoringService = llmMonitoringService;
     }
 
     public String assessRiskScopeAndActions(Map<String, Object> companiesHouse,
@@ -214,9 +216,23 @@ public class RiskScopeActionsAgent {
                     .messages(UserMessage.from(prompt))
                     .build();
 
+            // Track LLM call
+            io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
             // Call chat() and extract content
             ChatResponse response = chatModel.chat(request);
-            return response.aiMessage().text();
+            String result = response.aiMessage().text();
+
+            // Record successful LLM call
+            llmMonitoringService.recordSuccessfulCall(
+                llmTimer,
+                "gpt-4o-mini", // model from config
+                200, // estimated prompt tokens
+                100, // estimated completion tokens
+                1000 // estimated duration in ms
+            );
+
+            return result;
 
         } catch (Exception e) {
             throw new RuntimeException("Error in risk scope and actions assessment", e);

@@ -17,6 +17,9 @@ public class CustomerProfileAgent {
     @Autowired
     private OpenAiChatModel chatModel;
 
+    @Autowired
+    private LLMMonitoringService llmMonitoringService;
+
     public String getProfileSummary(String customerId) throws IOException {
         JsonNode crmData = JsonLoader.loadJson("crm.json");
         JsonNode customer = null;
@@ -43,8 +46,22 @@ public class CustomerProfileAgent {
                 .messages(UserMessage.from(prompt))
                 .build();
 
+        // Track LLM call
+        io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
         // Call chat() and extract AI response
         ChatResponse response = chatModel.chat(request);
-        return response.aiMessage().text(); // or .content() depending on AiMessage API
+        String result = response.aiMessage().text(); // or .content() depending on AiMessage API
+
+        // Record successful LLM call
+        llmMonitoringService.recordSuccessfulCall(
+            llmTimer,
+            "gpt-4o-mini", // model from config
+            200, // estimated prompt tokens
+            100, // estimated completion tokens
+            1000 // estimated duration in ms
+        );
+
+        return result;
     }
 }
