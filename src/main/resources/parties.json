@@ -1,0 +1,103 @@
+{
+  "customers": {
+    "CUST-0001": [
+      {
+        "party_id": "CUST-0001-P01",
+        "name": "Rohan Mehta",
+        "role": "Director",
+        "pep": false,
+        "sanctions": false,
+        "residency": "IN",
+        "risk_label": "MEDIUM"
+      },
+      {
+        "party_id": "CUST-0001-P02",
+        "name": "Shreya Iyer",
+        "role": "Beneficial Owner",
+        "pep": false,
+        "sanctions": false,
+        "residency": "IN",
+        "risk_label": "LOW"
+      },
+      {
+        "party_id": "CUST-0001-P03",
+        "name": "Carlos Mendes",
+        "role": "Signatory",
+        "pep": false,
+        "sanctions": false,
+        "residency": "AE",
+        "risk_label": "MEDIUM"
+      }
+    ],
+    "CUST-0002": [
+      {
+        "party_id": "CUST-0002-P01",
+        "name": "Anita Rao",
+        "role": "Managing Partner",
+        "pep": false,
+        "sanctions": false,
+        "residency": "IN",
+        "risk_label": "LOW"
+      },
+      {
+        "party_id": "CUST-0002-P02",
+        "name": "Vikram Shah",
+        "role": "Beneficial Owner",
+        "pep": false,
+        "sanctions": false,
+        "residency": "SG",
+        "risk_label": "MEDIUM"
+      }
+    ],
+    "CUST-0003": [
+      {
+        "party_id": "CUST-0003-P01",
+        "name": "Priya Sharma",
+        "role": "Chairperson",
+        "pep": false,
+        "sanctions": false,
+        "residency": "IN",
+        "risk_label": "MEDIUM"
+      },
+      {
+        "party_id": "CUST-0003-P02",
+        "name": "Ahmed Latif",
+        "role": "Beneficial Owner",
+        "pep": false,
+        "sanctions": false,
+        "residency": "AE",
+        "risk_label": "HIGH"
+      },
+      {
+        "party_id": "CUST-0003-P03",
+        "name": "Lena Kovac",
+        "role": "Signatory",
+        "pep": false,
+        "sanctions": false,
+        "residency": "HR",
+        "risk_label": "MEDIUM"
+      }
+    ],
+    "CUST-0004": [
+      {
+        "party_id": "CUST-0004-P01",
+        "name": "Rahul Khanna",
+        "role": "Director",
+        "pep": false,
+        "sanctions": false,
+        "residency": "IN",
+        "risk_label": "LOW"
+      },
+      {
+        "party_id": "CUST-0004-P02",
+        "name": "Emily Carter",
+        "role": "Beneficial Owner",
+        "pep": false,
+        "sanctions": false,
+        "residency": "US",
+        "risk_label": "LOW"
+      }
+    ]
+  }
+}
+

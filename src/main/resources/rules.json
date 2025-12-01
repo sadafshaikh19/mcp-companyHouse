@@ -1,0 +1,90 @@
+{
+  "high_risk_countries": [
+    "IR",
+    "KP",
+    "SY",
+    "AF"
+  ],
+  "medium_risk_countries": [
+    "RU",
+    "UA",
+    "TR"
+  ],
+  "sector_risk": {
+    "Manufacturing": "MEDIUM",
+    "Hospitality": "LOW",
+    "Construction": "HIGH",
+    "Information Technology": "LOW"
+  },
+  "risk_thresholds": {
+    "intl_outward_mom_spike_pct": 100,
+    "high_risk_country_volume_ratio": 0.05,
+    "cash_deposit_to_turnover_ratio": 0.30,
+    "large_single_txn_threshold_inr": 5000000,
+    "months_without_kyb_review_for_high_risk": 12,
+    "months_without_kyb_review_for_others": 18
+  },
+  "kyb_review_triggers": [
+    {
+      "code": "TRIG_INTL_SPIKE",
+      "description": "Month-on-month spike in international outward payments above configured threshold.",
+      "category": "TRANSACTIONAL",
+      "severity": "MEDIUM"
+    },
+    {
+      "code": "TRIG_HIGH_RISK_COUNTRY",
+      "description": "Payments to or from high-risk countries exceed configured ratio of total volume.",
+      "category": "TRANSACTIONAL",
+      "severity": "HIGH"
+    },
+    {
+      "code": "TRIG_CASH_HEAVY",
+      "description": "Cash deposits exceed configured ratio of estimated annual turnover.",
+      "category": "TRANSACTIONAL",
+      "severity": "MEDIUM"
+    },
+    {
+      "code": "TRIG_SECTOR_HIGH_RISK",
+      "description": "Customer belongs to an inherently higher-risk sector.",
+      "category": "PROFILE",
+      "severity": "MEDIUM"
+    },
+    {
+      "code": "TRIG_KYB_OVERDUE",
+      "description": "KYB review not performed within configured time window.",
+      "category": "PROFILE",
+      "severity": "HIGH"
+    }
+  ],
+  "risk_scoring_model": {
+    "base_scores": {
+      "LOW": 10,
+      "MEDIUM": 20,
+      "HIGH": 30
+    },
+    "trigger_score_impacts": {
+      "TRIG_INTL_SPIKE": 8,
+      "TRIG_HIGH_RISK_COUNTRY": 12,
+      "TRIG_CASH_HEAVY": 6,
+      "TRIG_SECTOR_HIGH_RISK": 5,
+      "TRIG_KYB_OVERDUE": 15
+    },
+    "bands": [
+      {
+        "min_score": 0,
+        "max_score": 19,
+        "risk_band": "GREEN"
+      },
+      {
+        "min_score": 20,
+        "max_score": 34,
+        "risk_band": "AMBER"
+      },
+      {
+        "min_score": 35,
+        "max_score": 100,
+        "risk_band": "RED"
+      }
+    ]
+  }
+}

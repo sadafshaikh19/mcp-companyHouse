@@ -1,0 +1,372 @@
+{
+  "customers": {
+    "CUST-0001": {
+      "currency": "INR",
+      "monthly_stats": [
+        {
+          "period": "2025-05",
+          "total_inward_amount": 32000000,
+          "total_outward_amount": 28000000,
+          "num_transactions": 410,
+          "intl_outward_amount": 6000000,
+          "intl_inward_amount": 2000000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 1200000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 22000000, "num_txns": 330 },
+            { "country": "US", "total_amount": 6000000, "num_txns": 40 },
+            { "country": "DE", "total_amount": 2000000, "num_txns": 20 }
+          ]
+        },
+        {
+          "period": "2025-06",
+          "total_inward_amount": 34000000,
+          "total_outward_amount": 29500000,
+          "num_transactions": 430,
+          "intl_outward_amount": 6500000,
+          "intl_inward_amount": 2100000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 1100000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 23500000, "num_txns": 345 },
+            { "country": "US", "total_amount": 6500000, "num_txns": 42 },
+            { "country": "DE", "total_amount": 2100000, "num_txns": 21 }
+          ]
+        },
+        {
+          "period": "2025-07",
+          "total_inward_amount": 35500000,
+          "total_outward_amount": 30000000,
+          "num_transactions": 445,
+          "intl_outward_amount": 6800000,
+          "intl_inward_amount": 2300000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 1150000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 24500000, "num_txns": 355 },
+            { "country": "US", "total_amount": 6800000, "num_txns": 44 },
+            { "country": "DE", "total_amount": 2300000, "num_txns": 23 }
+          ]
+        },
+        {
+          "period": "2025-08",
+          "total_inward_amount": 42000000,
+          "total_outward_amount": 41000000,
+          "num_transactions": 520,
+          "intl_outward_amount": 15000000,
+          "intl_inward_amount": 3000000,
+          "high_risk_country_volume": 2500000,
+          "cash_deposits_amount": 1400000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 26000000, "num_txns": 370 },
+            { "country": "US", "total_amount": 8000000, "num_txns": 55 },
+            { "country": "AE", "total_amount": 5000000, "num_txns": 35 },
+            { "country": "IR", "total_amount": 2500000, "num_txns": 15 }
+          ]
+        },
+        {
+          "period": "2025-09",
+          "total_inward_amount": 43800000,
+          "total_outward_amount": 43000000,
+          "num_transactions": 540,
+          "intl_outward_amount": 16000000,
+          "intl_inward_amount": 3200000,
+          "high_risk_country_volume": 3200000,
+          "cash_deposits_amount": 1600000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 27000000, "num_txns": 380 },
+            { "country": "US", "total_amount": 8200000, "num_txns": 56 },
+            { "country": "AE", "total_amount": 4800000, "num_txns": 34 },
+            { "country": "IR", "total_amount": 3200000, "num_txns": 20 }
+          ]
+        },
+        {
+          "period": "2025-10",
+          "total_inward_amount": 44500000,
+          "total_outward_amount": 45000000,
+          "num_transactions": 555,
+          "intl_outward_amount": 17000000,
+          "intl_inward_amount": 3300000,
+          "high_risk_country_volume": 3500000,
+          "cash_deposits_amount": 1800000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 27200000, "num_txns": 382 },
+            { "country": "US", "total_amount": 8400000, "num_txns": 58 },
+            { "country": "AE", "total_amount": 4900000, "num_txns": 35 },
+            { "country": "IR", "total_amount": 3500000, "num_txns": 22 }
+          ]
+        }
+      ]
+    },
+    "CUST-0002": {
+      "currency": "INR",
+      "monthly_stats": [
+        {
+          "period": "2025-05",
+          "total_inward_amount": 9000000,
+          "total_outward_amount": 7500000,
+          "num_transactions": 210,
+          "intl_outward_amount": 500000,
+          "intl_inward_amount": 200000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2500000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8500000, "num_txns": 200 },
+            { "country": "SG", "total_amount": 500000, "num_txns": 5 }
+          ]
+        },
+        {
+          "period": "2025-06",
+          "total_inward_amount": 9200000,
+          "total_outward_amount": 7700000,
+          "num_transactions": 215,
+          "intl_outward_amount": 550000,
+          "intl_inward_amount": 250000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2600000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8650000, "num_txns": 205 },
+            { "country": "SG", "total_amount": 550000, "num_txns": 5 }
+          ]
+        },
+        {
+          "period": "2025-07",
+          "total_inward_amount": 8800000,
+          "total_outward_amount": 7400000,
+          "num_transactions": 205,
+          "intl_outward_amount": 450000,
+          "intl_inward_amount": 200000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2400000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8350000, "num_txns": 195 },
+            { "country": "SG", "total_amount": 450000, "num_txns": 4 }
+          ]
+        },
+        {
+          "period": "2025-08",
+          "total_inward_amount": 9100000,
+          "total_outward_amount": 7650000,
+          "num_transactions": 218,
+          "intl_outward_amount": 520000,
+          "intl_inward_amount": 260000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2550000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8580000, "num_txns": 207 },
+            { "country": "SG", "total_amount": 520000, "num_txns": 5 }
+          ]
+        },
+        {
+          "period": "2025-09",
+          "total_inward_amount": 9250000,
+          "total_outward_amount": 7800000,
+          "num_transactions": 220,
+          "intl_outward_amount": 530000,
+          "intl_inward_amount": 270000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2600000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8720000, "num_txns": 210 },
+            { "country": "SG", "total_amount": 530000, "num_txns": 5 }
+          ]
+        },
+        {
+          "period": "2025-10",
+          "total_inward_amount": 9350000,
+          "total_outward_amount": 7900000,
+          "num_transactions": 222,
+          "intl_outward_amount": 540000,
+          "intl_inward_amount": 280000,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 2650000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 8810000, "num_txns": 212 },
+            { "country": "SG", "total_amount": 540000, "num_txns": 5 }
+          ]
+        }
+      ]
+    },
+    "CUST-0003": {
+      "currency": "INR",
+      "monthly_stats": [
+        {
+          "period": "2025-05",
+          "total_inward_amount": 52000000,
+          "total_outward_amount": 51000000,
+          "num_transactions": 620,
+          "intl_outward_amount": 4000000,
+          "intl_inward_amount": 1500000,
+          "high_risk_country_volume": 500000,
+          "cash_deposits_amount": 8000000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 46000000, "num_txns": 570 },
+            { "country": "AE", "total_amount": 2500000, "num_txns": 25 },
+            { "country": "IR", "total_amount": 500000, "num_txns": 10 }
+          ]
+        },
+        {
+          "period": "2025-06",
+          "total_inward_amount": 54000000,
+          "total_outward_amount": 53000000,
+          "num_transactions": 640,
+          "intl_outward_amount": 4500000,
+          "intl_inward_amount": 1600000,
+          "high_risk_country_volume": 650000,
+          "cash_deposits_amount": 9000000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 47600000, "num_txns": 585 },
+            { "country": "AE", "total_amount": 2800000, "num_txns": 30 },
+            { "country": "IR", "total_amount": 650000, "num_txns": 12 }
+          ]
+        },
+        {
+          "period": "2025-07",
+          "total_inward_amount": 55500000,
+          "total_outward_amount": 54500000,
+          "num_transactions": 655,
+          "intl_outward_amount": 4800000,
+          "intl_inward_amount": 1700000,
+          "high_risk_country_volume": 700000,
+          "cash_deposits_amount": 9500000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 48800000, "num_txns": 595 },
+            { "country": "AE", "total_amount": 2900000, "num_txns": 32 },
+            { "country": "IR", "total_amount": 700000, "num_txns": 13 }
+          ]
+        },
+        {
+          "period": "2025-08",
+          "total_inward_amount": 59000000,
+          "total_outward_amount": 62000000,
+          "num_transactions": 700,
+          "intl_outward_amount": 7500000,
+          "intl_inward_amount": 2000000,
+          "high_risk_country_volume": 1800000,
+          "cash_deposits_amount": 13000000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 50500000, "num_txns": 605 },
+            { "country": "AE", "total_amount": 3700000, "num_txns": 40 },
+            { "country": "IR", "total_amount": 1800000, "num_txns": 20 }
+          ]
+        },
+        {
+          "period": "2025-09",
+          "total_inward_amount": 61000000,
+          "total_outward_amount": 64500000,
+          "num_transactions": 720,
+          "intl_outward_amount": 8000000,
+          "intl_inward_amount": 2100000,
+          "high_risk_country_volume": 2000000,
+          "cash_deposits_amount": 14000000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 52000000, "num_txns": 615 },
+            { "country": "AE", "total_amount": 3800000, "num_txns": 42 },
+            { "country": "IR", "total_amount": 2000000, "num_txns": 22 }
+          ]
+        },
+        {
+          "period": "2025-10",
+          "total_inward_amount": 62000000,
+          "total_outward_amount": 66000000,
+          "num_transactions": 735,
+          "intl_outward_amount": 8200000,
+          "intl_inward_amount": 2200000,
+          "high_risk_country_volume": 2200000,
+          "cash_deposits_amount": 14500000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 52800000, "num_txns": 623 },
+            { "country": "AE", "total_amount": 4000000, "num_txns": 45 },
+            { "country": "IR", "total_amount": 2200000, "num_txns": 24 }
+          ]
+        }
+      ]
+    },
+    "CUST-0004": {
+      "currency": "INR",
+      "monthly_stats": [
+        {
+          "period": "2025-05",
+          "total_inward_amount": 3000000,
+          "total_outward_amount": 2500000,
+          "num_transactions": 90,
+          "intl_outward_amount": 0,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 200000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 3000000, "num_txns": 90 }
+          ]
+        },
+        {
+          "period": "2025-06",
+          "total_inward_amount": 3400000,
+          "total_outward_amount": 2900000,
+          "num_transactions": 105,
+          "intl_outward_amount": 0,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 210000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 3400000, "num_txns": 105 }
+          ]
+        },
+        {
+          "period": "2025-07",
+          "total_inward_amount": 3800000,
+          "total_outward_amount": 3300000,
+          "num_transactions": 115,
+          "intl_outward_amount": 0,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 220000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 3800000, "num_txns": 115 }
+          ]
+        },
+        {
+          "period": "2025-08",
+          "total_inward_amount": 4200000,
+          "total_outward_amount": 3650000,
+          "num_transactions": 130,
+          "intl_outward_amount": 300000,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 230000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 3900000, "num_txns": 120 },
+            { "country": "US", "total_amount": 300000, "num_txns": 10 }
+          ]
+        },
+        {
+          "period": "2025-09",
+          "total_inward_amount": 4600000,
+          "total_outward_amount": 4000000,
+          "num_transactions": 140,
+          "intl_outward_amount": 400000,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 240000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 4200000, "num_txns": 130 },
+            { "country": "US", "total_amount": 400000, "num_txns": 10 }
+          ]
+        },
+        {
+          "period": "2025-10",
+          "total_inward_amount": 5000000,
+          "total_outward_amount": 4400000,
+          "num_transactions": 155,
+          "intl_outward_amount": 500000,
+          "intl_inward_amount": 0,
+          "high_risk_country_volume": 0,
+          "cash_deposits_amount": 260000,
+          "top_countries": [
+            { "country": "IN", "total_amount": 4500000, "num_txns": 140 },
+            { "country": "US", "total_amount": 500000, "num_txns": 15 }
+          ]
+        }
+      ]
+    }
+  }
+}

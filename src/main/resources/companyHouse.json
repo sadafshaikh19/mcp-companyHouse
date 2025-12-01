@@ -1,0 +1,478 @@
+{
+  "businesses": [
+    {
+      "customer_id": "CUST-0001",
+      "business_identity": {
+        "experian_business_ref": "EX-0001",
+        "registered_name": "ABC Exports Private Limited",
+        "trading_name": "ABC Exports",
+        "company_registration_number": "10000001",
+        "legal_form": "LIMITED",
+        "status": "ACTIVE"
+      },
+      "address_contact": {
+        "location_line_1": "12 Rivergate Industrial Park",
+        "location_line_2": "Unit 4",
+        "location_line_3": "Dockside",
+        "location_line_4": "",
+        "location_line_5": "",
+        "post_town": "London",
+        "postcode": "E14 2AB",
+        "country": "GB",
+        "phone_number": "+44 20 7000 1100",
+        "matched_phone_number": "+44 20 7000 1100",
+        "matched_postcode": "E14 2AB"
+      },
+      "industry_classification": {
+        "sic_code": "28290",
+        "sic_description": "Manufacture of other general-purpose machinery n.e.c.",
+        "code_type": "UK_SIC_2007",
+        "business_activities": "Exports of industrial machinery and related components"
+      },
+      "search_summary": {
+        "search_lookup_id": "SRCH-2025-ABC-001",
+        "number_of_matches": 1,
+        "search_name_used": "ABC Exports Limited",
+        "name_type": "RC",
+        "locality_resolution": {
+          "district": "Tower Hamlets",
+          "post_town": "London",
+          "county": "Greater London",
+          "rebate_mailing_code": "RMC01",
+          "error_code": ""
+        }
+      },
+      "credit_summary": {
+        "credit_score": {
+          "score_value": 612,
+          "score_range_min": 0,
+          "score_range_max": 999,
+          "score_band": "MEDIUM",
+          "score_date": "2025-10-31"
+        },
+        "credit_limit_recommendation": {
+          "recommended_limit": 750000,
+          "currency": "GBP",
+          "basis": "Based on latest filed accounts and recent payment performance in manufacturing exports sector."
+        }
+      },
+      "payment_behaviour": {
+        "trade_experiences_available": true,
+        "average_days_beyond_terms": 8,
+        "worst_payment_experience": "30–60 days beyond terms with a small international supplier.",
+        "trend_indicator": "DETERIORATING"
+      },
+      "public_records": {
+        "ccj_count": 0,
+        "ccj_total_amount": 0,
+        "insolvency_indicators": {
+          "in_administration": false,
+          "in_liquidation": false,
+          "voluntary_arrangements": false
+        },
+        "legal_notices_count": 0,
+        "fraud_flags_present": false
+      },
+      "ownership_management": {
+        "directors": [
+          {
+            "name": "Rahul Verma",
+            "role": "Director",
+            "appointment_date": "2018-11-15",
+            "resignation_date": null,
+            "dob_year": 1979,
+            "country_of_residence": "GB"
+          },
+          {
+            "name": "Ananya Verma",
+            "role": "Director",
+            "appointment_date": "2019-01-05",
+            "resignation_date": null,
+            "dob_year": 1983,
+            "country_of_residence": "GB"
+          }
+        ],
+        "beneficial_owners": [
+          {
+            "name": "Rahul Verma",
+            "ownership_percent": 60,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          },
+          {
+            "name": "Ananya Verma",
+            "ownership_percent": 40,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          }
+        ]
+      },
+      "group_structure": {
+        "is_group_member": true,
+        "parent_company_ref": null,
+        "ultimate_parent_ref": null,
+        "group_companies": [
+          {
+            "experian_business_ref": "EX-0045",
+            "relationship": "SISTER",
+            "registered_name": "ABC Logistics Services Limited"
+          }
+        ]
+      },
+      "financials": {
+        "latest_accounts_date": "2024-03-31",
+        "turnover": 3800000,
+        "profit_before_tax": 420000,
+        "net_worth": 1600000,
+        "currency": "GBP",
+        "accounts_type": "FULL"
+      }
+    },
+    {
+      "customer_id": "CUST-0002",
+      "business_identity": {
+        "experian_business_ref": "EX-0002",
+        "registered_name": "Sunrise Hospitality LLP",
+        "trading_name": "Sunrise Hotels",
+        "company_registration_number": "OC300202",
+        "legal_form": "PARTNERSHIP",
+        "status": "ACTIVE"
+      },
+      "address_contact": {
+        "location_line_1": "45 Seaside Parade",
+        "location_line_2": "",
+        "location_line_3": "",
+        "location_line_4": "",
+        "location_line_5": "",
+        "post_town": "Brighton",
+        "postcode": "BN1 4AA",
+        "country": "GB",
+        "phone_number": "+44 1273 900200",
+        "matched_phone_number": "+44 1273 900200",
+        "matched_postcode": "BN1 4AA"
+      },
+      "industry_classification": {
+        "sic_code": "55100",
+        "sic_description": "Hotels and similar accommodation",
+        "code_type": "UK_SIC_2007",
+        "business_activities": "Business hotel and short-stay accommodation for corporate guests"
+      },
+      "search_summary": {
+        "search_lookup_id": "SRCH-2025-SUN-001",
+        "number_of_matches": 1,
+        "search_name_used": "Sunrise Hospitality LLP",
+        "name_type": "RC",
+        "locality_resolution": {
+          "district": "Brighton and Hove",
+          "post_town": "Brighton",
+          "county": "East Sussex",
+          "rebate_mailing_code": "RMC02",
+          "error_code": ""
+        }
+      },
+      "credit_summary": {
+        "credit_score": {
+          "score_value": 735,
+          "score_range_min": 0,
+          "score_range_max": 999,
+          "score_band": "LOW",
+          "score_date": "2025-10-31"
+        },
+        "credit_limit_recommendation": {
+          "recommended_limit": 250000,
+          "currency": "GBP",
+          "basis": "Stable trading history and strong on-time payment record in hospitality sector."
+        }
+      },
+      "payment_behaviour": {
+        "trade_experiences_available": true,
+        "average_days_beyond_terms": 2,
+        "worst_payment_experience": "0–30 days beyond terms with utilities provider.",
+        "trend_indicator": "STABLE"
+      },
+      "public_records": {
+        "ccj_count": 0,
+        "ccj_total_amount": 0,
+        "insolvency_indicators": {
+          "in_administration": false,
+          "in_liquidation": false,
+          "voluntary_arrangements": false
+        },
+        "legal_notices_count": 0,
+        "fraud_flags_present": false
+      },
+      "ownership_management": {
+        "directors": [],
+        "beneficial_owners": [
+          {
+            "name": "James Carter",
+            "ownership_percent": 50,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          },
+          {
+            "name": "Emily Carter",
+            "ownership_percent": 50,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          }
+        ]
+      },
+      "group_structure": {
+        "is_group_member": false,
+        "parent_company_ref": null,
+        "ultimate_parent_ref": null,
+        "group_companies": []
+      },
+      "financials": {
+        "latest_accounts_date": "2024-03-31",
+        "turnover": 1400000,
+        "profit_before_tax": 120000,
+        "net_worth": 600000,
+        "currency": "GBP",
+        "accounts_type": "SMALL"
+      }
+    },
+    {
+      "customer_id": "CUST-0003",
+      "business_identity": {
+        "experian_business_ref": "EX-0003",
+        "registered_name": "UrbanBuild Infra Projects Limited",
+        "trading_name": "UrbanBuild Infra",
+        "company_registration_number": "08003344",
+        "legal_form": "LIMITED",
+        "status": "ACTIVE"
+      },
+      "address_contact": {
+        "location_line_1": "21 Cityworks Business Park",
+        "location_line_2": "Block B",
+        "location_line_3": "",
+        "location_line_4": "",
+        "location_line_5": "",
+        "post_town": "Birmingham",
+        "postcode": "B4 7RT",
+        "country": "GB",
+        "phone_number": "+44 121 555 8800",
+        "matched_phone_number": "+44 121 555 8800",
+        "matched_postcode": "B4 7RT"
+      },
+      "industry_classification": {
+        "sic_code": "42990",
+        "sic_description": "Construction of other civil engineering projects n.e.c.",
+        "code_type": "UK_SIC_2007",
+        "business_activities": "Infrastructure and civil construction projects including roads and industrial parks"
+      },
+      "search_summary": {
+        "search_lookup_id": "SRCH-2025-URB-001",
+        "number_of_matches": 1,
+        "search_name_used": "UrbanBuild Infra Projects Limited",
+        "name_type": "RC",
+        "locality_resolution": {
+          "district": "Birmingham",
+          "post_town": "Birmingham",
+          "county": "West Midlands",
+          "rebate_mailing_code": "RMC03",
+          "error_code": ""
+        }
+      },
+      "credit_summary": {
+        "credit_score": {
+          "score_value": 498,
+          "score_range_min": 0,
+          "score_range_max": 999,
+          "score_band": "HIGH",
+          "score_date": "2025-10-31"
+        },
+        "credit_limit_recommendation": {
+          "recommended_limit": 500000,
+          "currency": "GBP",
+          "basis": "High-volume project-based revenues with elevated risk indicators and mixed payment performance."
+        }
+      },
+      "payment_behaviour": {
+        "trade_experiences_available": true,
+        "average_days_beyond_terms": 22,
+        "worst_payment_experience": "60–90 days beyond terms with subcontractor.",
+        "trend_indicator": "DETERIORATING"
+      },
+      "public_records": {
+        "ccj_count": 2,
+        "ccj_total_amount": 54000,
+        "insolvency_indicators": {
+          "in_administration": false,
+          "in_liquidation": false,
+          "voluntary_arrangements": false
+        },
+        "legal_notices_count": 1,
+        "fraud_flags_present": false
+      },
+      "ownership_management": {
+        "directors": [
+          {
+            "name": "Mohammed Khan",
+            "role": "Director",
+            "appointment_date": "2016-05-10",
+            "resignation_date": null,
+            "dob_year": 1974,
+            "country_of_residence": "GB"
+          },
+          {
+            "name": "Sarah Johnson",
+            "role": "Director",
+            "appointment_date": "2019-09-01",
+            "resignation_date": null,
+            "dob_year": 1981,
+            "country_of_residence": "GB"
+          }
+        ],
+        "beneficial_owners": [
+          {
+            "name": "UrbanBuild Holdings Limited",
+            "ownership_percent": 80,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          },
+          {
+            "name": "Mohammed Khan",
+            "ownership_percent": 20,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          }
+        ]
+      },
+      "group_structure": {
+        "is_group_member": true,
+        "parent_company_ref": "EX-0100",
+        "ultimate_parent_ref": "EX-0100",
+        "group_companies": [
+          {
+            "experian_business_ref": "EX-0100",
+            "relationship": "PARENT",
+            "registered_name": "UrbanBuild Holdings Limited"
+          },
+          {
+            "experian_business_ref": "EX-0101",
+            "relationship": "SISTER",
+            "registered_name": "UrbanBuild Plant Hire Limited"
+          }
+        ]
+      },
+      "financials": {
+        "latest_accounts_date": "2024-03-31",
+        "turnover": 8900000,
+        "profit_before_tax": 350000,
+        "net_worth": 1900000,
+        "currency": "GBP",
+        "accounts_type": "FULL"
+      }
+    },
+    {
+      "customer_id": "CUST-0004",
+      "business_identity": {
+        "experian_business_ref": "EX-0004",
+        "registered_name": "NovaTech IT Services Private Limited",
+        "trading_name": "NovaTech IT",
+        "company_registration_number": "14567890",
+        "legal_form": "LIMITED",
+        "status": "ACTIVE"
+      },
+      "address_contact": {
+        "location_line_1": "3 Innovation Way",
+        "location_line_2": "Tech Park",
+        "location_line_3": "",
+        "location_line_4": "",
+        "location_line_5": "",
+        "post_town": "Manchester",
+        "postcode": "M1 3AB",
+        "country": "GB",
+        "phone_number": "+44 161 400 2200",
+        "matched_phone_number": "+44 161 400 2200",
+        "matched_postcode": "M1 3AB"
+      },
+      "industry_classification": {
+        "sic_code": "62020",
+        "sic_description": "Information technology consultancy activities",
+        "code_type": "UK_SIC_2007",
+        "business_activities": "IT consulting and managed services for mid-market clients"
+      },
+      "search_summary": {
+        "search_lookup_id": "SRCH-2025-NOV-001",
+        "number_of_matches": 1,
+        "search_name_used": "NovaTech IT Services Limited",
+        "name_type": "RC",
+        "locality_resolution": {
+          "district": "Manchester",
+          "post_town": "Manchester",
+          "county": "Greater Manchester",
+          "rebate_mailing_code": "RMC04",
+          "error_code": ""
+        }
+      },
+      "credit_summary": {
+        "credit_score": {
+          "score_value": 672,
+          "score_range_min": 0,
+          "score_range_max": 999,
+          "score_band": "MEDIUM",
+          "score_date": "2025-10-31"
+        },
+        "credit_limit_recommendation": {
+          "recommended_limit": 120000,
+          "currency": "GBP",
+          "basis": "Early-stage IT services business with limited filed history but clean payment record."
+        }
+      },
+      "payment_behaviour": {
+        "trade_experiences_available": true,
+        "average_days_beyond_terms": 5,
+        "worst_payment_experience": "30–60 days beyond terms during initial trading period.",
+        "trend_indicator": "IMPROVING"
+      },
+      "public_records": {
+        "ccj_count": 0,
+        "ccj_total_amount": 0,
+        "insolvency_indicators": {
+          "in_administration": false,
+          "in_liquidation": false,
+          "voluntary_arrangements": false
+        },
+        "legal_notices_count": 0,
+        "fraud_flags_present": false
+      },
+      "ownership_management": {
+        "directors": [
+          {
+            "name": "Priya Shah",
+            "role": "Director",
+            "appointment_date": "2024-07-15",
+            "resignation_date": null,
+            "dob_year": 1990,
+            "country_of_residence": "GB"
+          }
+        ],
+        "beneficial_owners": [
+          {
+            "name": "Priya Shah",
+            "ownership_percent": 100,
+            "is_pep": false,
+            "country_of_residence": "GB"
+          }
+        ]
+      },
+      "group_structure": {
+        "is_group_member": false,
+        "parent_company_ref": null,
+        "ultimate_parent_ref": null,
+        "group_companies": []
+      },
+      "financials": {
+        "latest_accounts_date": "2025-03-31",
+        "turnover": 420000,
+        "profit_before_tax": 65000,
+        "net_worth": 180000,
+        "currency": "GBP",
+        "accounts_type": "MICRO"
+      }
+    }
+  ]
+}
