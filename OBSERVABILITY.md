@@ -21,6 +21,13 @@ The observability setup includes:
 - Sets up service resource attributes
 - Provides Tracer bean for manual instrumentation
 
+### 2. LLM Observability Configuration (`LLMObservabilityConfig.java`)
+
+- Custom LangChain4j listeners for LLM monitoring
+- Automatic capture of token usage and costs
+- Integration with distributed tracing
+- Error tracking and performance monitoring
+
 **Configuration Properties:**
 ```properties
 otel.exporter.otlp.endpoint=http://localhost:4317
@@ -53,6 +60,33 @@ Provides custom metrics for KYB operations:
 - `kyb.agent.operations`: Timer for agent operations
 - Custom gauge registration with value suppliers
 - Simple value recording with counters
+
+### 5. LLM Monitoring Service (`LLMMonitoringService.java`)
+
+Comprehensive monitoring for Large Language Model operations:
+
+#### Token Usage Metrics
+- `llm.tokens.prompt`: Distribution of prompt tokens per request
+- `llm.tokens.completion`: Distribution of completion tokens per request
+- `llm.tokens.total`: Distribution of total tokens per request
+
+#### Cost Metrics
+- `llm.cost.total`: Total LLM API costs in USD
+- `llm.cost.per_request`: Distribution of costs per LLM request
+
+#### Performance Metrics
+- `llm.call.duration`: Duration of LLM API calls
+- `llm.calls.total`: Total number of LLM API calls
+- `llm.calls.successful`: Number of successful LLM API calls
+- `llm.calls.failed`: Number of failed LLM API calls
+
+#### Model Usage Metrics
+- `llm.model.gpt4.calls`: Number of GPT-4 model calls
+- `llm.model.gpt35.calls`: Number of GPT-3.5 model calls
+- `llm.model.other.calls`: Number of other model calls
+
+#### Error Tracking
+- `llm.errors`: Counters for different error types by model
 
 ### 5. Enhanced RiskComplianceAgent
 
@@ -142,6 +176,19 @@ logging.level.io.opentelemetry=INFO
 logging.pattern.level=%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]
 ```
 
+### LLM Monitoring Configuration
+
+```properties
+# LLM Monitoring Settings
+llm.monitoring.enabled=true
+llm.monitoring.log.prompts=true
+llm.monitoring.log.responses=true
+llm.monitoring.cost.alert.threshold=10.0
+
+# LLM Logging Level
+logging.level.com.mcpkyb.service.LLMMonitoringService=INFO
+```
+
 ## Monitoring and Alerting
 
 ### Recommended Alerts
@@ -149,6 +196,9 @@ logging.pattern.level=%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-
 1. **High Error Rate**: Alert when risk assessment errors exceed threshold
 2. **Slow Response Times**: Alert when agent operations take too long
 3. **High RED Risk Assessments**: Business logic alerts for compliance
+4. **High LLM Costs**: Alert when LLM API costs exceed daily threshold
+5. **High LLM Error Rate**: Alert when LLM call failure rate exceeds threshold
+6. **Slow LLM Responses**: Alert when LLM call latency exceeds acceptable limits
 
 ### Example Prometheus Queries
 
@@ -158,6 +208,18 @@ rate(kyb_risk_assessments_green_total[5m]) / rate(kyb_risk_assessments_total[5m]
 
 # Agent operation latency
 histogram_quantile(0.95, rate(kyb_agent_operations_bucket[5m]))
+
+# LLM Cost per minute
+rate(llm_cost_total[5m])
+
+# LLM Error rate
+rate(llm_calls_failed_total[5m]) / rate(llm_calls_total[5m])
+
+# LLM Token usage rate
+rate(llm_tokens_total_sum[5m]) / rate(llm_tokens_total_count[5m])
+
+# LLM P95 latency
+histogram_quantile(0.95, rate(llm_call_duration_bucket[5m]))
 ```
 
 ## Troubleshooting

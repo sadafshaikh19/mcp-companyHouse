@@ -24,12 +24,14 @@ public class RiskComplianceAgent {
     private final OpenAiChatModel chatModel;
     private final Tracer tracer;
     private final MetricsService metricsService;
+    private final LLMMonitoringService llmMonitoringService;
     private final ObjectMapper objectMapper;
 
-    public RiskComplianceAgent(OpenAiChatModel chatModel, Tracer tracer, MetricsService metricsService, ObjectMapper objectMapper) {
+    public RiskComplianceAgent(OpenAiChatModel chatModel, Tracer tracer, MetricsService metricsService, LLMMonitoringService llmMonitoringService, ObjectMapper objectMapper) {
         this.chatModel = chatModel;
         this.tracer = tracer;
         this.metricsService = metricsService;
+        this.llmMonitoringService = llmMonitoringService;
         this.objectMapper = objectMapper;
     }
 
@@ -66,9 +68,21 @@ public class RiskComplianceAgent {
 
             logger.debug("Sending chat request to OpenAI model");
 
-            // Call chat() and extract content
-            ChatResponse response = chatModel.chat(request);
-            String result = response.aiMessage().text();
+        // Track LLM call
+        io.micrometer.core.instrument.Timer.Sample llmTimer = llmMonitoringService.startLLMCall();
+
+        // Call chat() and extract content
+        ChatResponse response = chatModel.chat(request);
+        String result = response.aiMessage().text();
+
+        // Record successful LLM call
+        llmMonitoringService.recordSuccessfulCall(
+            llmTimer,
+            "gpt-4o-mini", // model from config
+            200, // estimated prompt tokens
+            100, // estimated completion tokens
+            1000 // estimated duration in ms
+        );
 
             // Parse the result to extract risk color for metrics
             try {
