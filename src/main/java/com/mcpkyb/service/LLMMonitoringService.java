@@ -53,14 +53,17 @@ public class LLMMonitoringService {
     private final AtomicLong totalCompletionTokens = new AtomicLong(0);
     private final AtomicLong totalCostMicroDollars = new AtomicLong(0); // Cost in micro-dollars (millionths of a dollar)
 
+    private final LangSmithManualTracing langSmithTracing;
+
     // Cost rates per 1K tokens (in USD)
     private static final double GPT_4_INPUT_COST_PER_1K = 0.03;
     private static final double GPT_4_OUTPUT_COST_PER_1K = 0.06;
     private static final double GPT_35_TURBO_INPUT_COST_PER_1K = 0.0015;
     private static final double GPT_35_TURBO_OUTPUT_COST_PER_1K = 0.002;
 
-    public LLMMonitoringService(MeterRegistry meterRegistry) {
+    public LLMMonitoringService(MeterRegistry meterRegistry, LangSmithManualTracing langSmithTracing) {
         this.meterRegistry = meterRegistry;
+        this.langSmithTracing = langSmithTracing;
 
         // Initialize counters
         this.totalLLMCalls = Counter.builder("llm.calls.total")
@@ -161,6 +164,20 @@ public class LLMMonitoringService {
 
         logger.debug("LLM call completed - Model: {}, Prompt tokens: {}, Completion tokens: {}, Total tokens: {}, Cost: ${}, Duration: {}ms",
                 model, promptTokens, completionTokens, totalTokens, String.format("%.6f", cost), durationMs);
+
+        // Send trace to LangSmith
+        try {
+            langSmithTracing.traceLLMCall(
+                "LLM call for model: " + model,
+                "Response generated with " + completionTokens + " tokens",
+                promptTokens,
+                completionTokens,
+                cost,
+                durationMs
+            );
+        } catch (Exception e) {
+            logger.debug("Failed to send trace to LangSmith: {}", e.getMessage());
+        }
     }
 
     /**

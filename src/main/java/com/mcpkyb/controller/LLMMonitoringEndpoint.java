@@ -12,7 +12,7 @@ import java.util.Map;
  * Custom actuator endpoint for LLM monitoring statistics
  */
 @Component
-@Endpoint(id = "llm-stats")
+@Endpoint(id = "llmStats")
 public class LLMMonitoringEndpoint {
 
     private final LLMMonitoringService llmMonitoringService;

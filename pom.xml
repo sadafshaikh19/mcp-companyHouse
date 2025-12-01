@@ -78,8 +78,12 @@
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
 
-        <!-- LangChain4j Observability - Note: langchain4j-observability artifact may not be available yet -->
-        <!-- Using built-in listeners for observability instead -->
+        <!-- LangSmith for LangChain observability -->
+     <dependency>
+        <groupId>com.langchain.smith</groupId>
+        <artifactId>langsmith-java</artifactId>
+        <version>0.1.0-alpha.17</version>
+    </dependency>
 
         <!-- Spring Boot WebFlux for SSE support -->
         <dependency>
