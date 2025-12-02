@@ -3,6 +3,7 @@
         {
             "customer_id": "CUST-0001",
             "legal_name": "ABC Exports Private Limited",
+            "twitter_id": "AskNationwide",
             "short_name": "ABC Exports",
             "sector": "Manufacturing",
             "sub_sector": "Industrial Machinery",
@@ -28,6 +29,7 @@
         {
             "customer_id": "CUST-0002",
             "legal_name": "Sunrise Hospitality LLP",
+            "twitter_id": "AskNationwide",
             "short_name": "Sunrise Hotels",
             "sector": "Hospitality",
             "sub_sector": "Business Hotels",
@@ -52,6 +54,7 @@
         {
             "customer_id": "CUST-0003",
             "legal_name": "UrbanBuild Infra Projects Limited",
+            "twitter_id": "AskNationwide",
             "short_name": "UrbanBuild Infra",
             "sector": "Construction",
             "sub_sector": "Infrastructure Projects",
@@ -77,6 +80,7 @@
         {
             "customer_id": "CUST-0004",
             "legal_name": "NovaTech IT Services Private Limited",
+            "twitter_id": "AskNationwide",
             "short_name": "NovaTech IT",
             "sector": "Information Technology",
             "sub_sector": "IT Services",

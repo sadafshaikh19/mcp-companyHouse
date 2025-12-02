@@ -32,6 +32,12 @@ public class McpServerService {
 
     @Autowired
     private RiskScopeActionsAgent riskScopeActionsAgent;
+
+    @Autowired
+    private CompanyHouseAgent companyHouseAgent;
+
+    @Autowired
+    private SentimentAnalysisAgent sentimentAnalysisAgent;
     
     public List<McpTool> listTools() {
         List<McpTool> tools = new ArrayList<>();
@@ -129,6 +135,36 @@ public class McpServerService {
         riskScopeTool.setInputSchema(riskScopeSchema);
         tools.add(riskScopeTool);
 
+        // Tool 7: searchCompanyHouse
+        Map<String, McpTool.PropertySchema> companyHouseProperties = new HashMap<>();
+        companyHouseProperties.put("customerId", new McpTool.PropertySchema("string", "Customer ID to search Companies House for"));
+
+        McpTool.ToolInputSchema companyHouseSchema = new McpTool.ToolInputSchema();
+        companyHouseSchema.setType("object");
+        companyHouseSchema.setProperties(companyHouseProperties);
+        companyHouseSchema.setRequired(List.of("customerId"));
+
+        McpTool companyHouseTool = new McpTool();
+        companyHouseTool.setName("searchCompanyHouse");
+        companyHouseTool.setDescription("Search Companies House API for company information using the customer's legal name from CRM data. Returns list of matching companies with company number and title.");
+        companyHouseTool.setInputSchema(companyHouseSchema);
+        tools.add(companyHouseTool);
+
+        // Tool 8: analyzeSentiment
+        Map<String, McpTool.PropertySchema> sentimentProperties = new HashMap<>();
+        sentimentProperties.put("customerId", new McpTool.PropertySchema("string", "Customer ID to analyze sentiment for using their Twitter handle from CRM data"));
+
+        McpTool.ToolInputSchema sentimentSchema = new McpTool.ToolInputSchema();
+        sentimentSchema.setType("object");
+        sentimentSchema.setProperties(sentimentProperties);
+        sentimentSchema.setRequired(List.of("customerId"));
+
+        McpTool sentimentTool = new McpTool();
+        sentimentTool.setName("analyzeSentiment");
+        sentimentTool.setDescription("Analyze sentiment from recent tweets using the customer's Twitter handle from CRM data. Returns sentiment analysis with user classifications and aggregated sentiment by account type.");
+        sentimentTool.setInputSchema(sentimentSchema);
+        tools.add(sentimentTool);
+
         return tools;
     }
     
@@ -207,6 +243,20 @@ public class McpServerService {
                         companiesHouseData, experianData, crmData, transactionData, rulesData
                     );
 
+                case "searchCompanyHouse":
+                    customerId = (String) arguments.get("customerId");
+                    if (customerId == null) {
+                        throw new IllegalArgumentException("customerId is required");
+                    }
+                    return companyHouseAgent.searchCompanyByCustomerId(customerId);
+
+                case "analyzeSentiment":
+                    customerId = (String) arguments.get("customerId");
+                    if (customerId == null) {
+                        throw new IllegalArgumentException("customerId is required");
+                    }
+                    return sentimentAnalysisAgent.analyzeSentimentByCustomerId(customerId);
+
                 default:
                     throw new IllegalArgumentException("Unknown tool: " + toolName);
             }
@@ -238,8 +288,11 @@ public class McpServerService {
                     Object result = callTool(name, arguments);
                     Map<String, Object> toolResult = new HashMap<>();
                     
-                    // For runKYB and assessRiskScopeAndActions tools, return structured data directly
-                    if (("runKYB".equals(name) || "assessRiskScopeAndActions".equals(name)) && result instanceof String) {
+                    // Handle structured data for different tools
+                    if ("searchCompanyHouse".equals(name) && result instanceof List) {
+                        // Handle searchCompanyHouse tool - return structured data directly
+                        toolResult.put("companies", result);
+                    } else if (("runKYB".equals(name) || "assessRiskScopeAndActions".equals(name)) && result instanceof String) {
                         try {
                             com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
                             @SuppressWarnings("unchecked")

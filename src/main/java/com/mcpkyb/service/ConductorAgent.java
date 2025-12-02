@@ -61,7 +61,7 @@ public class ConductorAgent {
         Map<String, Object> transactionInsights = extractMapFromObject(txEnvelope.get("transaction_insights"), defaultTransactionInsights());
         result.put("transaction_insights", transactionInsights);
         String transactionSummary = extractStringFromObject(transactionInsights.get("summary"), "Transaction analysis not available");
-        
+
         // Step 5: Risk & Rules Assessment
         String profileSummary = formatProfileSummary(entityProfile, partySummary);
         com.fasterxml.jackson.databind.JsonNode rules = JsonLoader.loadJson("rules.json");
